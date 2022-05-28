@@ -46,6 +46,14 @@ git branch -M main
 git push origin main
 ```
 
+
+```bash
+python3 src/load_data.py
+python3 src/split_data.py
+python3 src/train_and_evaluate.py
+dvc repro
+```
+
 tox command -
 ```bash
 tox
