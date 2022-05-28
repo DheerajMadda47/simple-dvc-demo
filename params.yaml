@@ -4,7 +4,7 @@ base:
   target_col: TARGET
 
 data_source:
-  s3_source: pseudo_remote_resource/winequality.csv
+  s3_source: pseudo_s3_bucket/winequality.csv
 
 load_data:
   raw_dataset_csv: data/raw/winequality.csv
