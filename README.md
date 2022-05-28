@@ -6,7 +6,7 @@ conda create -n dvc_demo python=3.7 -y
 
 activate env
 ```bash
-conda activate wineq
+conda activate dvc_demo
 ```
 
 created a req file
@@ -53,6 +53,7 @@ python3 src/split_data.py
 python3 src/train_and_evaluate.py
 dvc repro
 ```
+
 
 tox command -
 ```bash
