@@ -26,7 +26,7 @@ git init
 dvc init 
 ```
 ```bash
-dvc add data_given/winequality.csv
+dvc add pseudo_remote_resource/winequality.csv
 ```
 ```bash
 git add .
