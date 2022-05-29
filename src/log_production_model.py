@@ -1,10 +1,15 @@
+"""
+changes model with lowest mae (Good Model) to Production
+and all remaining models to Staging.
+Also, saves Good Model to local path
+"""
+
 from src.get_data import read_params
 import argparse
 import mlflow
 from mlflow.tracking import MlflowClient
 from pprint import pprint
 import joblib
-import os
 
 
 def log_production_model(config_path):
@@ -41,7 +46,9 @@ def log_production_model(config_path):
 
     loaded_model = mlflow.pyfunc.load_model(logged_model)
 
-    model_path = config["webapp_model_dir"]  # "prediction_service/model"
+    model_path = config[
+        "webapp_model_dir"
+    ]  # "prediction_service/model/model.joblib"
 
     joblib.dump(loaded_model, model_path)
 
