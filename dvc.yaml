@@ -28,10 +28,17 @@ stages:
     params:
     - estimators.ElasticNet.params.alpha
     - estimators.ElasticNet.params.l1_ratio
-    metrics:
-    - reports/scores.json:
-        cache: false
-    - reports/params.json:
-        cache: false
-    outs:
-    - saved_models/model.joblib
+    # metrics:
+    # - reports/scores.json:
+    #     cache: false
+    # - reports/params.json:
+    #     cache: false
+    # outs:
+    # - saved_models/model.joblib
+
+    ### Commented above for using MLFlow
+
+  log_production_model:
+    cmd: python3 src/log_production_model.py --config=params.yaml
+    deps:
+    - src/log_production_model.py
